@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f5f0" />
+  <meta name="description" content="Thoughtful everyday objects, made to last. Shop the latest collection at Form & Field." />
+  <title>Form & Field — Everyday, considered.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">A little something for your first order — take 10% off with <strong>WELCOME10</strong></div>
+  <header class="site-header">
+    <button class="icon-button menu-toggle" aria-label="Open menu" id="menuToggle"><span></span><span></span></button>
+    <a class="wordmark" href="#home" aria-label="Form and Field home">form<span>&</span>field</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#shop" data-view="shop">Shop all</a><a href="#shop" data-category="Home">Home</a><a href="#shop" data-category="Accessories">Accessories</a><a href="#shop" data-category="Wear">Wear</a><a href="#story">Our story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button account-button" id="accountOpen" aria-label="Sign in"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.8 20c.7-4 3-6 7.2-6s6.5 2 7.2 6"/></svg></button>
+      <button class="icon-button favorite-shortcut" id="favoriteView" aria-label="View favorites"><svg viewBox="0 0 24 24"><path d="M20.8 8.8c0 5.2-8.8 10-8.8 10s-8.8-4.8-8.8-10a4.7 4.7 0 0 1 8.8-2.3 4.7 4.7 0 0 1 8.8 2.3Z"/></svg><span class="count-badge" id="favoriteCount">0</span></button>
+      <button class="icon-button bag-button" id="cartOpen" aria-label="Open shopping bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="count-badge" id="cartCount">0</span></button>
+    </div>
+  </header>
+  <main id="appView">
+    <section class="hero" id="home">
+      <div class="hero-copy"><span class="eyebrow">GOOD THINGS, MADE WELL</span><h1>Make room for<br/><em>the everyday.</em></h1><p>Useful, beautiful things for the spaces we call home and the days we fill in them.</p><a class="button button-dark" href="#shop" data-view="shop">Explore the collection <span>↗</span></a><div class="hero-note"><span class="note-line"></span> Thoughtfully sourced. Always.</div></div>
+      <div class="hero-image"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=85" alt="Sunlit, thoughtfully styled living room"/><div class="image-caption">A slower kind of living <span>01 / 03</span></div></div>
+      <div class="hero-side-label">OBJECTS FOR A LIFE WELL LIVED · EST. 2018</div>
+    </section>
+    <section class="values-strip"><span>Made with intention</span><i>✳</i><span>Natural materials</span><i>✳</i><span>Small-batch makers</span><i>✳</i><span>Free shipping over $100</span></section>
+    <section class="collection-section" id="featured"><div class="section-heading"><div><span class="eyebrow">A FEW FAVOURITES</span><h2>Good things, lately.</h2></div><a href="#shop" data-view="shop" class="text-link">Shop all pieces <span>↗</span></a></div><div class="product-grid" id="featuredGrid"></div></section>
+    <section class="editorial" id="story"><div class="editorial-image"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1300&q=85" alt="Natural textures in a calm, collected home"/></div><div class="editorial-copy"><span class="eyebrow">A NOTE FROM US</span><h2>Less, but<br/><em>more meaningful.</em></h2><p>We believe the things we live with should earn their place. So we work with independent makers to find pieces that feel good, work hard, and stay with you for years.</p><a href="#shop" data-view="shop" class="text-link">Get to know us <span>↗</span></a></div></section>
+    <section class="collection-section shop-view hidden" id="shopPage"><div class="shop-heading"><div><span class="eyebrow">THE FULL COLLECTION</span><h2 id="shopTitle">Shop all</h2><p id="shopSubtitle">Find something to make your everyday feel a little more special.</p></div><div class="shop-tools"><label class="search-box"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4 4"/></svg><input id="searchInput" type="search" placeholder="Search pieces" aria-label="Search products"/></label><select id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A to Z</option></select></div></div><div class="shop-layout"><aside class="filter-panel"><div class="filter-title">Refine by <button id="clearFilters">Clear</button></div><div class="filter-group"><h3>Category</h3><label><input type="radio" name="category" value="All" checked/> All pieces <span>08</span></label><label><input type="radio" name="category" value="Home"/> Home <span>03</span></label><label><input type="radio" name="category" value="Accessories"/> Accessories <span>03</span></label><label><input type="radio" name="category" value="Wear"/> Wear <span>02</span></label></div><div class="filter-group"><h3>Price range</h3><div class="range-label"><span>$<b id="minValue">0</b></span><span>$<b id="maxValue">250</b></span></div><input type="range" id="priceRange" min="0" max="250" value="250"/><p class="filter-hint">Showing pieces up to $<span id="priceHint">250</span></p></div><div class="filter-group"><h3>Availability</h3><label><input type="checkbox" id="inStockOnly"/> In stock only</label></div></aside><div class="shop-results"><div class="results-label"><span id="resultsCount">8 pieces</span><span>Sorted with care</span></div><div class="product-grid" id="shopGrid"></div><div class="empty-state hidden" id="emptyState"><span>○</span><h3>No pieces found</h3><p>Try adjusting your filters or search.</p><button class="button button-dark" id="emptyReset">Clear filters</button></div></div></div></section>
+    <section class="newsletter"><span class="eyebrow">LETTERS FROM THE FIELD</span><h2>A little more lovely<br/>in your inbox.</h2><p>New arrivals, maker stories, and 10% off your first order.</p><form id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Email address" required/><button type="submit" aria-label="Subscribe">Join us ↗</button></form><div class="newsletter-message" id="newsletterMessage"></div></section>
+  </main>
+  <footer><a class="wordmark" href="#home">form<span>&</span>field</a><p>Everyday, considered. © 2025 Form & Field</p><div><a href="#shop" data-view="shop">Shop</a><a href="#story">Our story</a><a href="mailto:hello@formandfield.example">Contact</a></div></footer>
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag"><div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>Your bag <span id="cartHeadingCount">(0)</span></h2></div><button class="close-button" data-close aria-label="Close">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-footer" id="cartFooter"><div class="subtotal"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div><p>Shipping and taxes calculated at checkout.</p><button class="button button-dark checkout-button" id="checkoutButton">Continue to checkout <span>↗</span></button></div></aside>
+  <section class="modal" id="accountModal" aria-modal="true" role="dialog" aria-labelledby="accountTitle"><button class="close-button modal-close" data-close aria-label="Close">×</button><div class="modal-brand wordmark">form<span>&</span>field</div><span class="eyebrow" id="accountEyebrow">WELCOME BACK</span><h2 id="accountTitle">Good to see you.</h2><p class="modal-intro" id="accountIntro">Sign in to pick up where you left off.</p><div id="accountFeedback" class="account-feedback hidden"></div><form id="accountForm"><label class="form-field hidden" id="nameField">Your name<input id="accountName" type="text" autocomplete="name"/></label><label class="form-field">Email address<input id="accountEmail" type="email" placeholder="you@example.com" required autocomplete="email"/></label><label class="form-field">Password<input id="accountPassword" type="password" placeholder="At least 6 characters" required minlength="6" autocomplete="current-password"/></label><button type="submit" class="button button-dark account-submit" id="accountSubmit">Sign in <span>↗</span></button></form><p class="switch-auth" id="switchAuth">New around here? <button type="button" id="authSwitch">Create an account</button></p><p class="fine-print">By continuing, you agree to our Terms and Privacy Policy.</p></section>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
